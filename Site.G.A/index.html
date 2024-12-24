@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>  <!-- head é a primeira seção de um documento HTML e carrega informações importantes sobre a página -->
+    <!-- Define o conjunto de caracteres usado no documento como UTF-8 -->
+    <meta charset="UTF-8"> 
+    <!-- Configura a página para ser responsiva em dispositivos móveis -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+    <!-- Define palavras-chave para otimização nos motores de busca (SEO) -->
+    <meta name="keywords" content="inclusão educacional, personalização de ensino, educação inclusiva, Geração Alpha, Plano Educacional Individualizado, PEI, Análise do Comportamento Aplicada, ABA, tecnologia na educação, educação neurodivergente, suporte pedagógico, alunos com necessidades especiais, ferramentas educacionais, integração escola-família, soluções educacionais inovadoras">
+    <!-- Meta Description -->
+    <meta name="description" content="A Geração Alpha transforma a educação com soluções inovadoras, integrando escola, família e especialistas. Foco em inclusão e personalização para alunos neurodivergentes.">
+    <!-- Define o autor da página -->
+    <meta name="author" content="Geração Alpha"> 
+    <!-- Define o título da página que aparece na aba do navegador -->
+    <title>Geração Alpha</title> 
+    <!-- Importação de uma fonte personalizada (QuickSand) do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet"> 
+    <!-- Importação de um arquivo CSS externo para estilizar a página -->
+    <link rel="stylesheet" href="style.css"> 
+    <!-- Importação da biblioteca AOS (Animate on Scroll) para animações ao rolar a página -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> 
+    <!-- Script do AOS para ativar as animações -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
+    <!-- Importação da biblioteca GSAP para animações avançadas -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" rel="stylesheet"> 
+    <!-- Ativa animações ligadas à rolagem -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" rel="stylesheet"> 
+    <!-- Importação do Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> 
+</head>
+
+<body> <!-- body é o corpo do site -->
+    <!-- Menu -->
+    <header id="menu">
+    <!-- Logo -->
+    <div class="logo">
+        <img src="images/logo1.png" alt="Logo da Geração Alpha no menu" loading="lazy">
+    </div>
+    
+    <button id="menu-toggle" class="menu-toggle" aria-expanded="false">&#9776;</button> <!-- Ícone do menu hambúrguer -->
+
+    <div class="menu-toggle" 
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <!-- Navegação -->
+    <nav class="menu-items" id="menu-items">
+        <button class="menu-btn" aria-label="Acessar login">Login</button>
+        <button class="menu-btn" aria-label="Acessar Contato">Contato</button>
+        <button class="menu-btn" aria-label="Acessar Serviços">Serviços</button>
+        <button class="menu-btn" aria-label="Acessar Soluções">Soluções</button>
+        <button class="menu-btn" aria-label="Acessar Comunidade">Comunidade</button>
+    </nav>
+
+    <script> // Linguagem JavaScrip
+        // Seleciona elementos
+        const header = document.querySelector('header');
+        const toggle = document.querySelector('.menu-toggle');
+        const body = document.body;
+    
+        // Adiciona ou remove a classe "menu-open" ao clicar no menu hambúrguer
+        toggle.addEventListener('click', () => {
+            body.classList.toggle('menu-open');
+            const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+            toggle.setAttribute('aria-expanded', !isExpanded);
+        });
+
+    
+        // Adiciona a classe "scrolled" ao rolar a página
+        let isScrolling;
+        window.addEventListener('scroll', () => {
+            clearTimeout(isScrolling);
+            isScrolling = setTimeout(() => {
+                if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        }, 100);
+    });
+
+        
+    </script>
+    
+    </header>
+
+    <!-- Conteúdo principal -->
+    <main>
+        <!-- Seção 1 -->
+        <section class="section" id="section1">
+            <!-- Container da logo principal -->
+            <div class="logo-center">
+                <img src="images/log.png" alt="Logo da Geração Alpha animada">
+            </div>
+        </section>
+
+        <!-- Seção 2 -->
+        <section class="section section-2">
+            <!-- Vídeo do YouTube de alunos -->
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/6mf_k34kVvc?autoplay=1&mute=1&loop=1&playlist=6mf_k34kVvc" 
+            frameborder="0" allow="autoplay; encrypted-media" 
+            loading="lazy" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </section>        
+        
+        <!-- Seção 3 -->
+        <section class="section section-3" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="300">
+            <div class="text-container" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="600">
+                <p>A <strong><span class="gradient-text">Geração Alpha</span></strong> nasceu de um desejo profundo de 
+                    transformar a educação em inclusiva e personalizada. Começamos 
+                    com um desafio essencial: tornar o ambiente educacional
+                    <strong><span class="gradient-text">verdadeiramente inclusivo</span></strong> para alunos de todos os 
+                    perfis e necessidades, especialmente para aqueles que exigem mais 
+                    suporte e compreensão.</p>
+                <p><strong><span class="gradient-text">Nossa missão?</span></strong> Construir uma ponte que torna a 
+                    educação personalizada, digna e acessível para todos.</p>
+            </div>
+        </section>
+
+        <!-- Seção 4 -->
+        <section class="section section-4" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="300">
+            <h1 data-aos="fade-right" data-aos-duration="2000" data-aos-delay="600"><strong>PEI</strong><span> & </span><strong>ABA</strong></h1>
+            <h2 data-aos="fade-right" data-aos-duration="2000" data-aos-delay="900">Reimaginando Metodologias</h2>
+            <div class="line" data-aos="fade-left" data-aos-duration="2000" data-aos-delay="1200"></div>
+            <div class="section-4-content" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="1500">
+                <div class="text">
+                    <p>
+                        A <strong>Geração Alpha</strong> está inovando na aplicação 
+                        de metodologias consagradas, como o <strong>Plano Educacional 
+                        Individualizado (PEI)</strong> e a <strong>Análise do Comportamento 
+                        Aplicada (ABA)</strong>.
+                    </p>
+                    <p>
+                        Nossa abordagem vai além do convencional, usando tecnologia para 
+                        tornar esses métodos mais acessíveis e dinâmicos, trazendo vida 
+                        ao que antes era um processo burocrático e estático. Nossos 
+                        recursos e ferramentas facilitam a colaboração em torno do aluno, 
+                        criando uma educação viva, em constante evolução.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 5 -->
+        <section class="section section-5" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="300">
+            <h1 data-aos="fade-right" data-aos-duration="2000" data-aos-delay="600"><strong>O PEI Para Além do Convencional</strong></h1>
+            <h2 data-aos="fade-right" data-aos-duration="2000" data-aos-delay="900">Um Plano que Evolui com o Aluno</h2>
+            <div class="line" data-aos="fade-left" data-aos-duration="2000" data-aos-delay="1200"></div>
+            <div class="section-5-content">
+                <iframe data-aos="fade" 
+                        data-aos-duration="4000" 
+                        data-aos-easing="ease" 
+                        src="https://www.youtube.com/embed/6mf_k34kVvc?autoplay=1&mute=1&loop=1&playlist=6mf_k34kVvc" loading="lazy" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <div class="text" data-aos="fade-left" data-aos-duration="2000" data-aos-delay="1800">
+                    <p>
+                    No sistema da <strong>Geração Alpha</strong>, o Plano 
+                    Educacional Individualizado (<strong>PEI</strong>) não é 
+                    apenas um documento.
+                    </p>
+                    <p>
+                    Ele se transforma em uma ferramenta 
+                    <strong>dinâmica</strong>, que se adapta ao ritmo de cada 
+                    aluno.
+                    </p>
+                    <p>
+                    Com ajustes <strong>em tempo real</strong>, o 
+                    <strong>PEI</strong> reflete o progresso e as necessidades 
+                    que surgem no dia a dia, permitindo que educadores, pais e 
+                    especialistas respondam rapidamente e de maneira assertiva, 
+                    sempre priorizando o bem-estar e o desenvolvimento de cada 
+                    aluno.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Seção 6 -->
+        <section class="section section-6" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="300">
+            <h1 data-aos="fade-right" data-aos-duration="2000" data-aos-delay="600"><strong>Potencializando a ABA</strong></h1>
+            <h2 data-aos="fade-right" data-aos-duration="2000" data-aos-delay="900">Desenvolvendo Habilidades e Criando Conexões</h2>
+            <div class="line" data-aos="fade-left" data-aos-duration="2000" data-aos-delay="1200"></div>
+            <div class="section-6-content">
+                <div class="text" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="1500">
+                    <p>
+                    Integramos a Análise do Comportamento Aplicada 
+                    <strong>(ABA)</strong> ao nosso sistema para facilitar o 
+                    desenvolvimento de habilidades sociais, acadêmicas e de 
+                    autocontrole dos alunos. 
+                    </p>
+                    <p>
+                    Com técnicas inovadoras e recursos intuitivos, nosso sistema 
+                    permite que <strong>professores</strong>, 
+                    <strong>especialistas</strong> e 
+                    <strong>famílias </strong>monitorem e apoiem o progresso dos 
+                    estudantes de maneira colaborativa.
+                    </p>
+                    <p>
+                    Essa <strong>integração</strong> promove um ambiente onde cada 
+                    avanço é celebrado, e cada desafio é enfrentado com suporte 
+                    contínuo.
+                    </p>
+                </div>
+                <iframe data-aos="fade" 
+                        data-aos-duration="4000" 
+                        data-aos-easing="ease" 
+                        src="https://www.youtube.com/embed/6mf_k34kVvc?autoplay=1&mute=1&loop=1&playlist=6mf_k34kVvc" allow="autoplay; encrypted-media" loading="lazy" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+        </section>
+                    
+                <!-- Seção 7 -->
+                <section class="section section-7" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="300">
+                    <div class="text-container" data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="600">
+                        <p>Somos um <strong><span class="gradient-text">movimento</span></strong> 
+                        que busca transformar a educação para além das salas de aula, criando um 
+                        ambiente onde cada aluno tem a chance de prosperar.</p>
+                        </div>
+                </section>
+                
+        <!-- Seção 8 - Cards Interativos -->
+        <section class="section section-8" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="300">
+            <div class="floating-cards-container">
+                <!-- Card 1 -->
+                <div class="floating-card" data-aos="fade-right" data-aos-duration="1500">
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h1>Escola</h1>
+                            <h2>Onde o Apoio se Torna Realidade</h2>
+                        </div>
+                        <div class="card-body">
+                            <h3>Na Geração Alpha, acreditamos que cada aluno é único e merece ser compreendido em sua totalidade.</h3>
+                            <div class="expandable-content">
+                            </div>
+                            <button class="expand-btn" aria-label="Expandir conteúdo">Saiba mais</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="floating-card" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200">
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h1>Especialista Clínico</h1>
+                            <h2>Transformando Vidas com União</h2>
+                        </div>
+                        <div class="card-body">
+                            <h3>Acreditamos que o verdadeiro impacto surge quando especialistas clínicos e escolas trabalham juntos.</h3>
+                            <div class="expandable-content">
+                                <p>Com nossas ferramentas, especialistas podem acompanhar, de forma prática e detalhada, o progresso e as necessidades únicas de cada estudante.</p>
+                                <p>Aqui, cada avanço é notado, e cada desafio é enfrentado em conjunto.</p>
+                            </div>
+                            <button class="expand-btn" aria-label="Expandir conteúdo">Saiba mais</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="floating-card" data-aos="fade-left" data-aos-duration="1500" data-aos-delay="400">
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h1>Famílias</h1>
+                            <h2>Iluminando Caminhos para Famílias</h2>
+                        </div>
+                        <div class="card-body">
+                            <h3>Sabemos que a jornada de uma família em busca de apoio é cheia de desafios, mas também de esperança.</h3>
+                            <div class="expandable-content">
+                                <p>Com nossa tecnologia, as famílias encontram uma maneira simples e eficaz de acompanhar o desenvolvimento de seus filhos.</p>
+                                <p>É mais do que uma plataforma; é um compromisso com cada família.</p>
+                            </div>
+                            <button class="expand-btn" aria-label="Expandir conteúdo">Saiba mais</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Logo e Redes Sociais -->
+            <div class="footer-section">
+                <img src="images/logrodapé.png" alt="Logo Geração Alpha" class="footer-logo">
+                <div class="social-links">
+                    <a href="https://www.instagram.com/g.alphaoficial/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/gera-o-alpha-oficial/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <!-- Links Rápidos -->
+            <div class="footer-section">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="#">Login</a></li>
+                    <li><a href="#">Serviços</a></li>
+                    <li><a href="#">Soluções</a></li>
+                    <li><a href="#">Comunidade</a></li>
+                </ul>
+            </div>
+
+            <!-- Contato -->
+            <div class="footer-section">
+                <h3>Contato</h3>
+                <ul>
+                    <li><i class="fas fa-envelope"></i>comercial@geracaoalphaoficial.com.br</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Rua Ubaldino do Amaral, 927 - Alto da Rua XV </li>
+                    <li>CEP: 80.045-150</li>
+                    <li>Curitiba - PR</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Linha Animada -->
+        <div class="footer-line"></div>
+
+        <!-- Copyright -->
+        <div class="footer-bottom">
+            <p>&copy; 2024 Geração Alpha. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script> // Linguagem JavaScrip
+        // Inicializa as animações AOS
+        AOS.init({
+            easing: 'ease-out-back',
+            once: false,
+            mirror: true,
+            offset: 120
+        });
+    </script>
+

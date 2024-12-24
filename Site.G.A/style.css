@@ -1,0 +1,1665 @@
+/* Cores */
+:root {
+    --cor-1: #23397D;     /* Cor principal de fundo 1 (um tom de azul escuro) */
+    --cor-2: #16172E;     /* Cor principal de fundo 2 (um tom de roxo bem escuro) */
+    --cor-btn: #fff;      /* Cor dos botões (branco) */
+    --cor-hover: #06F7FF; /* Cor do hover nos botões (azul claro) */
+}
+/* ----EFEITOS----- */
+/* Seção 1 */
+/* Configuração básica da seção: define a posição relativa para controle 
+   de elementos posicionados dentro dela e esconde qualquer conteúdo que exceda seus limites */
+.section-1 {
+    position: relative;
+    overflow: hidden; 
+}
+
+/* Seção 1 --------------------  S    E   Ç   Ã   0  -  1 ------------------- */
+/* Adiciona um gradiente radial transparente como uma camada antes do conteúdo da seção,
+   criando um efeito visual suave com animação pulsante */
+.section-1::before {
+    content: '';        /* Cria um elemento visual antes da seção */
+    position: absolute; /* Posiciona o gradiente sobre toda a seção */
+    top: 0;             /* Alinha ao topo */
+    left: 0;            /* Alinha à esquerda */
+    width: 100%;        /* O gradiente ocupa toda a largura */
+    height: 100%;       /* O gradiente ocupa toda a altura */
+    background: radial-gradient(circle at center, rgba(6, 247, 255, 0.03) 0%, transparent 70%);
+    animation: pulse 4s infinite ease-in-out; /* Animação que simula uma pulsação suave */
+}
+
+/* Logo com efeito de entrada e brilho, Logo Principal */
+/* Configura a logo centralizada com um efeito de entrada suave e um brilho contínuo */
+.logo-center img {
+    height: 470px;      /* Define a altura da logo */
+    width: auto;        /* Mantém a proporção da imagem */
+    margin-top: 140px;  /* Espaçamento superior */
+    display: block;     /* Garante que a logo seja tratada como um bloco */
+    margin-left: auto;  /* Centraliza horizontalmente */
+    margin-right: auto; /* Centraliza horizontalmente */
+    filter: drop-shadow(0 0 15px rgba(6, 247, 255, 0.2));                /* Aplica um brilho inicial à logo */
+    animation: logoEntrance 2s ease-out, logoGlow 4s infinite ease-in-out; /* Efeitos de entrada e brilho contínuo */
+    transform-origin: center center; /* Define o ponto de transformação como o centro da imagem */
+}
+
+/* Container do texto animado com efeito de vidro BARRA DO MENU */
+/* Cria um estilo de vidro fosco ao fundo do texto, com bordas arredondadas e sombra suave */
+.animated-text-container {
+    background: rgba(255, 255, 255, 0.03);          /* Fundo semitransparente */
+    backdrop-filter: blur(5px);                       /* Aplica um desfoque no fundo */
+    padding: 15px 30px;                               /* Adiciona espaçamento interno */
+    border-radius: 15px;                              /* Bordas arredondadas */
+    border: 1px solid rgba(255, 255, 255, 0.05);    /* Linha de borda quase invisível */
+    box-shadow: 0 0 30px rgba(6, 247, 255, 0.05);   /* Sombra suave ao redor */
+    transform: translateY(20px);                      /* Move o container 20px para baixo inicialmente */
+}
+
+/* Texto base com efeito de brilho */
+/* Configura o texto principal com cor e sombra para dar um destaque sutil */
+.base-text {
+    font-size: 20px;                                  /* Define o tamanho da fonte */
+    color: rgba(255, 255, 255, 0.9);                /* Cor quase branca */
+    margin: 0;                                        /* Remove margens */
+    padding-right: 13px;                              /* Espaçamento à direita */
+    letter-spacing: 0.5px;                            /* Espaçamento entre caracteres */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Adiciona um leve brilho ao texto */
+}
+
+/* Palavras animadas com gradiente melhorado */
+/* Configura o texto das palavras animadas com um gradiente dinâmico e brilho */
+.word {
+    font-size: 20px;                                    /* Tamanho da fonte */
+    font-weight: bold;                                  /* Negrito para destaque */
+    background: linear-gradient(90deg, #940EFF, #06F7FF, #940EFF); /* Gradiente de cores */
+    background-size: 200% auto;                         /* O gradiente é duas vezes maior que o texto para criar o efeito de movimento */
+    -webkit-background-clip: text;                      /* Faz o gradiente aparecer apenas no texto */
+    -webkit-text-fill-color: transparent;               /* Torna o fundo do texto transparente */
+    animation: textGradient 4s infinite linear;         /* Animação que movimenta o gradiente */
+    filter: drop-shadow(0 0 2px rgba(6, 247, 255, 0.5)); /* Adiciona um leve brilho às palavras */
+}
+
+/* Animações */
+/* Animação de pulsação suave para o fundo */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.5;        /* Começa com pouca opacidade */
+        transform: scale(1); /* Tamanho padrão */
+    }
+    50% {
+        opacity: 0.8;           /* Aumenta a opacidade no meio */
+        transform: scale(1.02); /* Amplia ligeiramente */
+    }
+}
+
+/* Animação de entrada da logo */
+@keyframes logoEntrance {
+    0% {
+        opacity: 0;                               /* A logo começa invisível */
+        transform: translateY(-30px) scale(0.95); /* Vem de cima e levemente menor */
+    }
+    100% {
+        opacity: 1;                        /* Totalmente visível */
+        transform: translateY(0) scale(1); /* Na posição final, com tamanho normal */
+    }
+}
+
+/* Animação de brilho contínuo na logo */
+@keyframes logoGlow {
+    0%, 100% {
+        filter: drop-shadow(0 0 15px rgba(6, 247, 255, 0.2)); /* Brilho padrão */
+    }
+    50% {
+        filter: drop-shadow(0 0 25px rgba(6, 247, 255, 0.4)); /* Brilho mais intenso no meio */
+    }
+}
+
+/* Animação de movimento do gradiente no texto */
+@keyframes textGradient {
+    0% {
+        background-position: 0% center;  /* Gradiente começa à esquerda */
+    }
+    100% {
+        background-position: 200% center; /* Gradiente move-se completamente para a direita */
+    }
+}
+
+/* Responsividade mantendo os efeitos */
+/* Ajusta o tamanho da logo em telas menores */
+@media (max-width: 768px) {
+    .logo-center img {
+        height: 350px;     /* Reduz a altura da logo */
+        margin-top: 100px; /* Ajusta o espaçamento superior */
+    }
+}
+
+/* Estilos gerais */
+body {
+    margin: 0;                      /* Remove a margem padrão do body */
+    padding: 0;                     /* Remove o padding padrão do body */
+    font-family: 'Quicksand';       /* Define a fonte do corpo da página */
+    background: linear-gradient(135deg, var(--cor-1) 0%, var(--cor-2) 100%); /* Cria um fundo em gradiente, com o azul escuro de um lado e roxo escuro do outro */
+    background-size: 100% 100%;     /* Faz o fundo ocupar 100% da largura e altura da tela */
+    background-attachment: fixed;   /* Faz o fundo ficar fixo enquanto o conteúdo rola */
+    min-height: 100vh;              /* Garante que o corpo ocupe ao menos a altura da tela */
+}
+
+header {
+    position: fixed;         /* Fixa o header na parte superior da tela */
+    top: 0;                  /* Define o header no topo */
+    left: 0;                 /* Define o header à esquerda */
+    right: 0;                /* Define o header à direita */
+    backdrop-filter: blur(10px);         /* Aplica o efeito de desfoque */
+    -webkit-backdrop-filter: blur(10px); /* Suporte para navegadores baseados no WebKit */
+    display: flex;                       /* Define o menu como um layout flexível */
+    justify-content: space-between;      /* Espaça o conteúdo do menu igualmente entre a esquerda e direita */
+    align-items: center; /* Alinha os itens no centro verticalmente */
+    padding: 3px 30px;   /* Adiciona espaçamento interno */
+    z-index: 100;        /* Garante que o header fique acima de outros elementos */
+    border: none;        /* Remove bordas */
+}
+
+header.scrolled {
+    background: none !important;           /* Remove qualquer cor de fundo */
+    backdrop-filter: blur(10px);           /* Mantém o desfoque */
+    -webkit-backdrop-filter: blur(10px);   /* Suporte para navegadores baseados no WebKit */
+    transition: backdrop-filter 0.3s ease; /* Suave transição do desfoque */
+}
+
+header .logo img {
+    height: 30px;      /* Define a altura da logo */
+    width: auto;       /* Ajusta a largura automaticamente para manter a proporção da imagem */
+    margin-top: 10px;  /* Adiciona 20px de espaçamento no topo da logo */
+}
+
+.menu-btn {
+    background: none;       /* Remove o fundo do botão */
+    color: var(--cor-btn);  /* Define a cor do texto como branco */
+    border: none;           /* Remove a borda do botão */
+    padding: 10px 20px;     /* Adiciona espaçamento interno ao botão */
+    cursor: pointer;        /* Adiciona o cursor de mão quando passa sobre o botão */
+    margin-left: 20px;      /* Adiciona um espaço à esquerda do botão */
+    font-size: 12px;        /* Define o tamanho da fonte do botão */
+    transition: color 0.3s ease, text-shadow 0.3s ease;  /* Transição suave para a mudança de cor e sombra */
+}
+
+.menu-btn:hover {
+    color: var(--cor-hover);   /* Altera a cor do texto do botão para azul claro quando o mouse passa sobre ele */
+    text-shadow: 0 0 10px var(--cor-hover), 0 0 20px var(--cor-hover);  /* Adiciona uma sombra ao texto quando o botão é "hovered" */
+}
+
+.separator {
+    width: 2px;                       /* Define a largura da linha separadora */
+    height: 20px;                     /* Define a altura da linha separadora */
+    background-color: var(--cor-btn); /* Define a cor da linha separadora como branco */
+    margin: 0 10px;                   /* Adiciona um espaço de 10px nas laterais da linha */
+}
+
+/* RESPONSIVIDADE-Esconde-o-menu-padrão-em-telas-pequenas */
+@media (max-width: 768px) { /* Quando a largura da tela for menor que 768px (como em celulares e tablets) */
+    nav {
+        display: none;      /* Esconde os itens do menu, fazendo com que eles não apareçam */
+    }
+    .menu-toggle {
+        display: block;     /* Exibe o botão do menu hambúrguer (que estará escondido por padrão) */
+    }
+}
+
+/* RESPONSIVIDADE-Estilo do botão "menu hambúrguer" */
+.menu-toggle {
+    display: none;          /* Esconde o botão no padrão, ou seja, em telas grandes ele não aparece */
+    background: none;       /* Remove o fundo padrão do botão */
+    border: none;           /* Remove as bordas do botão */
+    color: var(--cor-btn);  /* Define a cor do ícone do botão */
+    font-size: 25px;        /* Define o tamanho do ícone do menu hambúrguer */
+    cursor: pointer;        /* Torna o cursor em forma de mão quando passa sobre o botão */
+    position: absolute;     /* Torna o botão posicionado de forma absoluta dentro do seu contêiner */
+    right: 20px;            /* Alinha o botão à direita, com uma margem de 20px */
+}
+
+/* RESPONSIVIDADE-Torna o botão "menu hambúrguer" visível em telas pequenas */
+@media (max-width: 768px) {
+    .menu-toggle {
+    display: block;         /* Exibe o botão do menu hambúrguer */
+    }
+}
+
+/* RESPONSIVIDADE-Exibe o menu quando estiver aberto */
+.menu-open nav {
+    display: flex;                  /* Exibe os itens do menu como flex */
+    flex-direction: column;         /* Organiza os itens em coluna */
+    background-color: var(--cor-2); /* Fundo roxo escuro */
+    position: absolute;             /* Garante que o menu fique sobreposto */
+    top: 70px;                      /* Ajusta a posição abaixo do header */
+    right: 0;
+    left: 0;
+    padding: 10px 0;                /* Espaçamento interno */
+}
+
+/* Estilo para os botões no menu aberto */
+.menu-open nav .menu-btn {
+    padding: 15px;       /* Ajusta o tamanho do botão */
+    text-align: center;  /* Centraliza o texto */
+    width: 100%;         /* Faz o botão ocupar toda a largura */
+}
+
+/* Estilo do menu ao rolar a página */
+header.scrolled {
+    background-color: rgba(22, 23, 46, 0.8); /* Fundo semi-transparente */
+    backdrop-filter: blur(5px);                /* Adiciona um desfoque no fundo */
+    transition: background-color 0.3s ease;    /* Faz a mudança suave */
+}
+
+/* Destacar botões ao usar o teclado */
+.menu-btn:focus, .menu-toggle:focus {
+    outline: 2px solid var(--cor-hover); /* Adiciona um contorno ao botão ao focar */
+    outline-offset: 2px;                 /* Distância entre o botão e o contorno */
+}
+
+/* Seções */
+.section {
+    height: 100vh;            /* Define a altura de cada seção para ocupar toda a altura da tela */
+    display: flex;            /* Exibe os itens da seção como flex */
+    flex-direction: column;   /* Organiza os itens em coluna */
+    justify-content: center;  /* Alinha os itens ao centro verticalmente */
+    align-items: center;      /* Alinha os itens ao centro horizontalmente */
+    color: white;           /* Define a cor do texto como branco */
+    text-align: center;       /* Centraliza o texto dentro da seção */
+}
+
+/* Logo centralizada */
+.logo-center img {
+    height: 470px;      /* Define a altura da logo */
+    width: auto;        /* Ajusta a largura automaticamente para manter a proporção da imagem */
+    margin-top: 140px;  /* Adiciona um espaçamento acima da logo */
+    display: block;     /* Torna a imagem um bloco */
+    margin-left: auto;  /* Centraliza a imagem horizontalmente em (auto) */
+    margin-right: auto; /* Centraliza a imagem horizontalmente em (auto) */
+}
+
+/* Container principal do texto animado - Reduzindo espaço superior */
+.animated-text-container {
+    text-align: center;
+    margin-top: 0px;      /* Reduzido de 20px para 0px */
+}
+
+/* Wrapper para alinhar a frase e as palavras horizontalmente */
+.text-animation-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;     /* Alinha à esquerda em vez de center */
+    gap: 0;                          /* Remove completamente o espaço entre os elementos */
+}
+
+/* Estilização do texto fixo "A base da Geração Alpha é" */
+.base-text {
+    font-size: 20px;        /* Define o tamanho da fonte */
+    color: white;         /* Define a cor do texto como branco */
+    margin: 0;              /* Remove qualquer margem externa */
+    padding-right: 13px;    /* Adiciona um pequeno espaçamento à direita para evitar sobreposição */
+    margin-top: -40px;      /* Move a frase para cima */
+}
+
+/* Container que mantém as palavras animadas organizadas e sobrepostas */
+.words {
+    position: relative;
+    height: 50px;
+    width: 150px;                    /* Reduzindo a largura para aproximar mais */
+    display: flex;
+    align-items: center;
+    margin-left: -5px;               /* Margem negativa para aproximar ainda mais da frase */
+    margin-top: -40px;              /* Move a frase para cima */
+}
+
+/* Animação fluida das linhas */
+@keyframes fluid-color-wave {
+    0% {
+        background-position: 0%; /* No início da animação, a posição do fundo é 0% */
+    }
+    50% {
+        background-position: 100%; /* No meio da animação, a posição do fundo é 100% */
+    }
+    100% {
+        background-position: 0%; /* No fim da animação, a posição do fundo volta para 0% */
+    }
+}
+
+/* Efeito para esconder menu ao rolar */
+header.hidden {
+    top: -80px; /* Quando o header tiver a classe "hidden", ele se move para cima e sai da tela */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .keywords {
+        flex-direction: column; /* Em telas pequenas, organiza as palavras em coluna */
+        gap: 20px;              /* Reduz o espaço entre as palavras para 20px */
+    }
+
+    .menu-btn {
+        font-size: 14px;    /* Reduz o tamanho da fonte do botão */
+        padding: 8px 15px;  /* Ajusta o espaçamento do botão */
+    }
+}
+
+/* Ajustes para telas muito pequenas */
+@media (max-width: 480px) {
+    .section-2 {
+        margin: 30px 0;        /* Reduz margem */
+        min-height: 250px;     /* Reduz altura mínima */
+    }
+
+    .section-2 iframe {
+        height: 250px;                                 /* Altura ajustada */
+        border-radius: 8px;                            /* Cantos arredondados */
+        box-shadow: 0 0 10px rgba(6, 247, 255, 0.5); /* Efeito de brilho */
+        border: 0px solid rgba(6, 247, 255, 0.8);    /* Borda sólida brilhante */
+    }
+}
+
+/* Ajustes para telas muito largas */
+@media (min-width: 1200px) {
+    .section-2 iframe {
+        max-width: 90%;       /* Limita largura em telas grandes */
+        max-height: 80vh;     /* Limita altura em telas grandes */
+        margin: 0 auto;       /* Centraliza */
+    }
+}
+
+/* Seção 2 - Vídeo  ---------------   S   E   Ç   Ã   O   -   2   -----------------*/ 
+.section-2 {
+    height: 100vh;          /* Altura total da viewport */
+    padding: 0;             /* Remove padding */
+    position: relative;     /* Para posicionamento */
+    overflow: hidden;       /* Evita overflow */
+}
+
+.section-2 iframe {
+    width: 100%;               /* Largura total */
+    height: 100%;              /* Altura total */
+    border: none;              /* Remove borda */
+    object-fit: cover;         /* Garante que o vídeo cubra todo o espaço */
+    box-shadow: 0 0 20px rgba(6, 247, 255, 0.2); /* Sombra suave */
+}
+
+/* Responsividade da Seção 2 */
+@media (max-width: 768px) {
+    .section-2 {
+        height: auto;          /* Altura automática */
+        min-height: 300px;     /* Altura mínima */
+        margin: 40px 0;        /* Espaço acima e abaixo */
+    }
+
+    .section-2 iframe {
+        height: 300px;                                 /* Altura fixa para tablets */
+        border-radius: 10px;                           /* Cantos arredondados */
+        box-shadow: 0 0 20px rgba(6, 247, 255, 0.2); /* Sombra suave */
+    }
+}
+
+/* Ajustes para telas muito pequenas */
+@media (max-width: 480px) {
+    .section-2 {
+        margin: 30px 0;        /* Reduz margem */
+        min-height: 250px;     /* Reduz altura mínima */
+    }
+
+    .section-2 iframe {
+        height: 250px;         /* Altura menor para smartphones */
+        border-radius: 8px;    /* Reduz raio da borda */
+    }
+}
+
+/* Ajustes para telas muito largas */
+@media (min-width: 1200px) {
+    .section-2 iframe {
+        max-width: 90%;        /* Limita largura */
+        max-height: 80vh;      /* Limita altura */
+        margin: 0 auto;        /* Centraliza */
+    }
+}
+
+/* -----------------------------   S   E   Ç   Ã   0   -   3  ----------------------*/
+.section-3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    font-size: 22px;
+    padding: 30px 20px; /* Reduzindo o padding superior e inferior */
+    height: 80vh;       /* Reduzindo a altura para 70% da altura da tela */
+}
+
+.text-container {
+    max-width: 800px; /* Limita a largura máxima do conteúdo */
+    line-height: 1.6; /* Define a altura da linha do texto para facilitar a leitura */
+}
+
+.text-container p {
+    font-family: 'Quicksand', sans-serif; /* Define a fonte do parágrafo */
+    font-weight: lighter;                 /* Define o peso da fonte como mais leve */
+}
+
+.text-container strong {
+    font-weight: bold; /* Torna o texto em negrito */
+}
+
+.section-3 .gradient-text {
+    background: linear-gradient(90deg, #940EFF, #06F7FF, #940EFF);
+    background-size: 200% auto;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: text-gradient-animation 4s infinite linear;
+}
+
+/* Responsividade da Seção 3 */
+@media (max-width: 768px) {
+    .section-3 {
+        padding: 40px 20px;         /* Espaço interno uniforme */
+        height: auto;               /* Altura ajustável ao conteúdo */
+        min-height: auto;           /* Remove altura mínima fixa */
+        display: flex;              /* Mantém flex */
+        justify-content: center;    /* Centraliza conteúdo */
+        align-items: center;        /* Alinha verticalmente */
+    }
+
+    .section-3 .text-container {
+        max-width: 90%;             /* Largura responsiva */
+        margin: 0 auto;             /* Centraliza o container */
+        padding: 20px;              /* Espaço interno */
+        background: rgba(0, 0, 0, 0.1); /* Fundo sutil */
+        border-radius: 15px;        /* Cantos arredondados */
+        backdrop-filter: blur(5px); /* Efeito de vidro */
+    }
+
+    .section-3 p {
+        font-size: 18px;           /* Tamanho de fonte ajustado */
+        line-height: 1.7;          /* Espaçamento entre linhas */
+        letter-spacing: 0.3px;     /* Melhora legibilidade */
+        margin-bottom: 25px;       /* Espaço entre parágrafos */
+        text-align: center;        /* Centraliza o texto */
+        color: white;            /* Garante cor do texto */
+    }
+
+    .section-3 strong {
+        color: #06F7FF;          /* Destaque em azul claro */
+        font-weight: 600;          /* Peso da fonte mais suave */
+        text-shadow: 0 0 10px rgba(6, 247, 255, 0.3); /* Brilho suave */
+    }
+
+    .section-3 p:last-child {
+        margin-bottom: 0;          /* Remove margem do último parágrafo */
+    }
+}
+
+/* Ajustes para telas muito pequenas */
+@media (max-width: 480px) {
+    .section-3 {
+        padding: 30px 15px;        /* Reduz padding */
+    }
+
+    .section-3 .text-container {
+        max-width: 95%;            /* Aumenta largura disponível */
+        padding: 15px;             /* Reduz padding */
+    }
+
+    .section-3 p {
+        font-size: 16px;           /* Reduz tamanho do texto */
+        line-height: 1.6;          /* Ajusta espaçamento */
+        margin-bottom: 20px;       /* Reduz espaço entre parágrafos */
+    }
+}
+
+/* Seção 4  --------------------   S   E   Ç   Ã   0   -   4 ---------------------- */
+/* (Linha da direita para a esquerda com animação de cores) */
+.section-4 {
+    margin-bottom: 100px;        /* Aumenta o espaço abaixo da Seção 4 */
+    position: relative;          /* Permite posicionamento absoluto dos itens dentro */
+    height: 200px;               /* Define a altura da seção */
+    display: flex;               /* Exibe os itens da seção como flex */
+    justify-content: flex-start; /* Alinha os itens à esquerda */
+    align-items: flex-start;     /* Alinha os itens ao topo */
+    flex-direction: column;      /* Organiza os itens em coluna */
+    padding-left: 200px;         /* Adiciona um espaçamento à esquerda da seção */
+}
+
+.section-4 {
+    .line {
+    position: absolute;         /* Posiciona a linha de forma absoluta */
+    top: 50%;                   /* Posiciona a linha no meio da seção */
+    right: 0;                   /* Alinha a linha à direita da seção */
+    width: 85%;                 /* Define a largura da linha */
+    height: 5px;                /* Define a altura da linha */
+    background: linear-gradient(90deg, #940EFF, #2189E6, #06F7FF); /* Define um gradiente de cores para a linha */
+    background-size: 200%;      /* Estica o gradiente para uma transição suave */
+    animation: fluid-color-wave 3s infinite linear; /* Aplica a animação na linha */
+    transform: translateY(-50%); /* Ajusta a linha para ficar centrada verticalmente */
+    border-radius: 5px;         /* Adiciona bordas arredondadas à linha */
+    box-shadow: 0 0 10px rgba(6, 247, 255, 0.5); /* Brilho na linha */
+    }
+}
+
+/* Título e subtítulo na Seção 4 */
+.section-4 h1 {
+    font-size: 35px;        /* Define o tamanho da fonte do título */
+    font-weight: bold;      /* Torna o título em negrito */
+    margin: 0;              /* Remove as margens do título */
+    color: white;         /* Define a cor do título como branco */
+    display: inline-block;  /* Exibe o título como bloco inline */
+    text-align: left;       /* Alinha o título à esquerda */
+}
+
+.section-4 h1 span {
+    font-weight: lighter; /* Torna o texto em span mais leve */
+}
+
+.section-4 h2 {
+    font-size: 25px;        /* Define o tamanho da fonte do subtítulo */
+    font-weight: lighter;   /* Torna o subtítulo mais leve */
+    color: white;         /* Define a cor do subtítulo como branco */
+    margin-top: 10px;       /* Adiciona um espaçamento acima do subtítulo */
+    text-align: left;       /* Alinha o subtítulo à esquerda */
+}
+
+/* Novo conteúdo abaixo da linha */
+.section-4-content {
+    display: flex;                /* Exibe os itens como flex */
+    justify-content: flex-start;  /* Alinha os itens à esquerda */
+    align-items: flex-start;      /* Alinha os itens ao topo */
+    gap: 100px;                   /* Adiciona um espaçamento de 100px entre os itens */
+    margin-top: 20px;             /* Adiciona um espaçamento acima do conteúdo */
+    padding-left: 2px;            /* Adiciona um espaçamento à esquerda */
+}
+
+.section-4-content .text {
+    max-width: 300px;                     /* Limita a largura máxima do texto */
+    font-family: 'Quicksand', sans-serif; /* Define a fonte do texto */
+    font-weight: lighter;                 /* Define a fonte como mais leve */
+    color: white;                       /* Define a cor do texto como branco */
+    line-height: 1.6;                     /* Define a altura das linhas para facilitar a leitura */
+}
+
+.section-4-content .text {
+    max-width: 300px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: lighter;
+    color: white;
+    line-height: 1.6;
+    text-align: left; /* Alinha o texto à esquerda */
+}
+
+.section-4-content .text strong {
+    font-weight: bold; /* Torna o texto dentro do strong em negrito */
+}
+
+.section-4-content iframe {
+    width: 600px;                                  /* Define a largura do iframe */
+    height: 350px;                                 /* Define a altura do iframe */
+    border: none;                                  /* Remove a borda do iframe */
+    margin-top: 30px;                              /* Adiciona um espaçamento acima do iframe */
+    box-shadow: 0 0 20px rgba(6, 247, 255, 0.2); /* Sombra suave */
+}
+
+/* Responsividade da Seção 4 */
+@media (max-width: 768px) {
+    .section-4 {
+        padding: 40px 20px;         /* Espaço uniforme ao redor da seção */
+        height: auto;               /* Altura se ajusta ao conteúdo */
+        margin: 30px 0 80px;        /* Margens: 30px topo, 0 laterais, 80px base */
+        position: relative;         /* Para posicionamento dos elementos filhos */
+        text-align: center;         /* Centraliza todo o texto da seção */
+        padding-left: 0;            /* Remove o padding-left que estava deslocando o conteúdo */
+    }
+
+    .section-4 h1 {
+        font-size: 32px;           /* Tamanho da fonte do título */
+        margin: 0 auto;            /* Centraliza horizontalmente */
+        width: 100%;               /* Ocupa toda a largura disponível */
+        text-align: center;        /* Centraliza o texto do título */
+        background: linear-gradient(45deg, #940EFF, #06F7FF); /* Gradiente roxo para azul */
+        -webkit-background-clip: text;                  /* Aplica o gradiente apenas no texto */
+        -webkit-text-fill-color: transparent;           /* Torna o texto transparente para mostrar o gradiente */
+        text-shadow: 0 0 15px rgba(6, 247, 255, 0.3); /* Brilho suave ao redor do texto */
+    }
+
+    .section-4 h2 {
+        font-size: 22px;           /* Tamanho da fonte do subtítulo */
+        margin: 10px auto 30px;    /* Margens: 10px topo, auto laterais, 30px base */
+        width: 100%;               /* Ocupa toda a largura disponível */
+        text-align: center;        /* Centraliza o texto do subtítulo */
+        color: #FFF;             /* Cor branca para o subtítulo */
+        opacity: 0.9;              /* Levemente transparente */
+    }
+
+    .section-4 .line {
+        width: 100vw;                /* Largura total da viewport */
+        position: relative;          /* Posicionamento relativo para seguir o fluxo do documento */
+        left: 50%;                   /* Move 50% para a direita */
+        transform: translateX(-50%); /* Centraliza a linha horizontalmente */
+        margin-top: 30px;            /* Espaço entre o h2 e a linha */
+        margin-bottom: 30px;         /* Espaço entre a linha e o conteúdo seguinte */
+        height: 4px;                 /* Espessura da linha */
+        box-shadow: 0 0 10px rgba(6, 247, 255, 0.5);                       /* Brilho ao redor da linha */
+        background: linear-gradient(90deg, #940EFF, #2189E6, #06F7FF); /* Gradiente da linha */
+        background-size: 200%;                                               /* Tamanho do gradiente para animação */
+        animation: fluid-color-wave 3s infinite linear;                      /* Animação do gradiente */
+    }
+
+    .section-4-content {
+        flex-direction: column-reverse; /* Inverte ordem: texto primeiro, depois vídeo */
+        align-items: center;        /* Centraliza */
+        gap: 30px;                  /* Espaço entre elementos */
+        padding: 40px 15px 20px;    /* Espaçamento interno */
+        max-width: 600px;           /* Largura máxima */
+        margin: 0 auto;             /* Centraliza container */
+    }
+
+    .section-4-content iframe {
+        width: 100%;               /* Largura total */
+        height: 250px;             /* Altura proporcional */
+        border-radius: 10px;       /* Cantos arredondados */
+        box-shadow: 0 0 20px rgba(6, 247, 255, 0.2); /* Sombra suave */
+        margin: 0;                 /* Remove margens */
+    }
+
+    .section-4-content .text {
+        max-width: 90%;            /* Largura responsiva */
+        margin: 0 auto;            /* Centraliza */
+        text-align: center;        /* Alinha texto */
+        font-size: 17px;           /* Tamanho legível */
+        line-height: 1.7;          /* Espaçamento linhas */
+        letter-spacing: 0.3px;     /* Legibilidade */
+        padding: 0 15px;           /* Espaço lateral */
+    }
+
+    .section-4-content .text p {
+        margin-bottom: 20px;       /* Espaço parágrafos */
+        opacity: 0.95;             /* Suaviza texto */
+    }
+
+    .section-4-content .text strong {
+        color: #06F7FF;          /* Destaque */
+        font-weight: 600;          /* Peso fonte */
+    }
+}
+
+/* Ajustes para telas muito pequenas */
+@media (max-width: 480px) {
+    .section-4 {
+        padding: 30px 15px;        /* Ajusta espaço */
+    }
+
+    .section-4 h1 {
+        font-size: 28px;           /* Reduz título */
+    }
+
+    .section-4 h2 {
+        font-size: 20px;           /* Reduz subtítulo */
+    }
+
+    .section-4-content iframe {
+        height: 200px;             /* Ajusta vídeo */
+    }
+
+    .section-4-content .text {
+        font-size: 16px;           /* Reduz texto */
+        line-height: 1.6;          /* Ajusta espaçamento */
+        max-width: 95%;            /* Aumenta largura */
+        padding: 0 10px;           /* Reduz padding */
+    }
+}
+
+/* Seção 5   --------------------   S   E   Ç   Ã   0   -   5   --------------------- */
+.section-5 {
+    margin-bottom: 150px;   /* Espaço inferior */
+    position: relative;     /* Necessário para o alinhamento */
+    height: auto;           /* Ajusta automaticamente com o conteúdo */
+    display: flex;          /* Layout flexível */
+    flex-direction: column; /* Organiza itens em coluna */
+    align-items: center;    /* Centraliza itens horizontalmente */
+    text-align: center;     /* Centraliza o texto */
+    margin-top:500px;       /* Ajuste este valor para mais ou menos espaço */
+}
+
+.section-5 h1 {
+    font-size: 35px;      /* Tamanho do título */
+    font-weight: bold;    /* Negrito */
+    margin: 0;            /* Remove margens padrão */
+    margin-left: 330px;   /* Ajuste este valor para mover mais ou menos para a direita */
+    color: white;       /* Cor do texto */
+}
+
+.section-5 h2 {
+    font-size: 25px;        /* Tamanho do subtítulo */
+    font-weight: lighter;   /* Peso leve */
+    color: white;         /* Cor do texto */
+    margin-top: 10px;       /* Espaço superior */
+    margin-bottom: 0px;     /* Remove espaçamento inferior */
+    margin-left: 500px;     /* Ajuste este valor para mover mais ou menos para a direita */
+    text-align: right;      /* Alinha o subtítulo à direita */
+}
+
+.section-5 .line {
+    width: 85%;                                     /* Mantém a largura de 85% */
+    height: 5px;                                    /* Altura da linha */
+    background: linear-gradient(90deg, #940EFF, #2189E6, #06F7FF); /* Gradiente de cores */
+    background-size: 200%;                          /* Estica o gradiente para uma transição suave */
+    animation: fluid-color-wave 3s infinite linear; /* Aplica a animação na linha */
+    margin: 20px auto;                              /* Centraliza e espaça a linha */
+    margin-left: 0;                                 /* Garante que a linha comece na borda esquerda */
+    margin-right: auto;                             /* Cria o espaço restante (15%) à direita */
+    border-radius: 5px;                             /* Bordas arredondadas */
+    text-align: left;
+    box-shadow: 0 0 10px rgba(6, 247, 255, 0.5);  /* Brilho na linha */
+}
+
+.section-5-content {
+    display: flex;           /* Flexbox para organizar vídeo e texto lado a lado */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    align-items: flex-start; /* Alinha os itens no topo */
+    gap: 100px;              /* Espaço entre vídeo e texto */
+    margin-top: 20px;        /* Espaço superior */
+}
+
+.section-5-content iframe {
+    width: 600px;       /* Largura do vídeo */
+    height: 350px;      /* Altura do vídeo */
+    border: 20px;       /* Cantos arredondados */
+    margin-top: 10px;   /* Adiciona um espaçamento acima do iframe */
+    box-shadow: 0 0 20px rgba(6, 247, 255, 0.2); /* Sombra suave */
+}
+
+.section-5-content .text {
+    max-width: 300px;                     /* Largura máxima do texto */
+    font-family: 'Quicksand', sans-serif; /* Fonte */
+    font-weight: lighter;                 /* Texto mais leve */
+    color: white;                       /* Cor do texto */
+    line-height: 1.6;                     /* Espaçamento entre linhas */
+    text-align: right;                    /* Alinha o subtítulo à direita */
+    margin-right: 120px;                  /* Ajuste este valor para mover mais ou menos para a direita */
+}
+
+/* Responsividade da Seção 5 */
+@media (max-width: 768px) {
+    .section-5 {
+        padding: 40px 20px;         /* Espaço uniforme */
+        height: auto;               /* Altura ajustável */
+        margin: 30px 0 80px;        /* Margens equilibradas */
+        position: relative;         /* Para posicionamento */
+        text-align: center;         /* Centraliza conteúdo */
+    }
+
+    .section-5 h1 {
+        font-size: 32px;           /* Título proporcional */
+        margin: 0 auto;            /* Centraliza horizontalmente */
+        width: 100%;               /* Largura total */
+        text-align: center;        /* Centraliza texto */
+        background: linear-gradient(45deg, #940EFF, #06F7FF); /* Gradiente */
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0 0 15px rgba(6, 247, 255, 0.3); /* Brilho */
+    }
+
+    .section-5 h2 {
+        font-size: 22px;           /* Subtítulo proporcional */
+        margin: 10px auto 30px;    /* Espaçamento */
+        width: 100%;               /* Largura total */
+        text-align: center;        /* Centraliza texto */
+        color: #FFF;             /* Cor branca */
+        opacity: 0.9;              /* Suaviza */
+    }
+
+    .section-5 .line {
+        width: 100vw;              /* Linha completa */
+        position: relative;        /* Muda para posicionamento relativo */
+        left: 50%;                 /* Centraliza */
+        transform: translateX(-50%); /* Ajuste fino */
+        margin-top: 30px;          /* Espaço após o h2 */
+        margin-bottom: 30px;       /* Espaço antes do conteúdo seguinte */
+        height: 4px;               /* Espessura */
+        box-shadow: 0 0 10px rgba(6, 247, 255, 0.5);  /* Brilho */
+        background: linear-gradient(90deg, #940EFF, #2189E6, #06F7FF); /* Gradiente da linha */
+        background-size: 200%;                          /* Tamanho do gradiente para animação */
+        animation: fluid-color-wave 3s infinite linear; /* Animação do gradiente */
+    }
+
+    .section-5-content {
+        flex-direction: column;  /* Organiza elementos em coluna */
+        gap: 30px;               /* Espaço entre elementos */
+        align-items: center;     /* Centraliza elementos */
+        padding: 40px 0 20px;    /* Espaçamento interno */
+        width: 100%;             /* Ocupa toda largura disponível */
+    }
+
+    .section-5-content iframe {
+        width: 100%;             /* Vídeo ocupa toda largura */
+        height: 250px;           /* Altura proporcional */
+        margin: 0;               /* Remove margens */
+        border-radius: 10px;     /* Cantos arredondados */
+        box-shadow: 0 0 20px rgba(6, 247, 255, 0.2); /* Sombra suave */
+    }
+
+    .section-5-content .text {
+        max-width: 90%;            /* Largura responsiva */
+        margin: 0 auto;            /* Centraliza */
+        text-align: center;        /* Alinha texto */
+        font-size: 17px;           /* Tamanho legível */
+        line-height: 1.7;          /* Espaçamento linhas */
+        letter-spacing: 0.3px;     /* Legibilidade */
+        padding: 0 15px;           /* Espaço lateral */
+    }
+
+    .section-5-content .text p {
+        margin-bottom: 20px;       /* Espaço parágrafos */
+    }
+
+    .section-5-content .text strong {
+        color: #06F7FF;          /* Destaque */
+        font-weight: 600;          /* Peso fonte */
+    }
+}
+
+/* Ajustes para telas muito pequenas */
+@media (max-width: 480px) {
+    .section-5 {
+        padding: 15px;           /* Reduz padding */
+    }
+
+    .section-5 h1 {
+        font-size: 28px;         /* Reduz título */
+    }
+
+    .section-5 h2 {
+        font-size: 20px;         /* Reduz subtítulo */
+    }
+
+    .section-5-content iframe {
+        height: 200px;           /* Ajusta altura do vídeo */
+    }
+
+    .section-5-content .text {
+        font-size: 16px;           /* Reduz texto */
+        line-height: 1.6;          /* Ajusta espaçamento */
+        max-width: 95%;            /* Aumenta largura disponível */
+    }
+}
+
+/* Seção 6 --------------------   S   E   Ç   Ã   0   -   6   --------------------- */
+/* (Linha da direita para a esquerda com animação de cores) */
+.section-6 {
+    position: relative;          /* Permite posicionamento absoluto dos itens dentro */
+    height: 200px;               /* Define a altura da seção */
+    display: flex;               /* Exibe os itens da seção como flex */
+    justify-content: flex-start; /* Alinha os itens à esquerda */
+    align-items: flex-start;     /* Alinha os itens ao topo */
+    flex-direction: column;      /* Organiza os itens em coluna */
+    padding-left: 200px;         /* Adiciona um espaçamento à esquerda da seção */
+}
+
+.section-6 {
+    .line {
+    position: absolute;           /* Posiciona a linha de forma absoluta */
+    top: 50%;                     /* Posiciona a linha no meio da seção */
+    right: 0;                     /* Alinha a linha à direita da seção */
+    width: 85%;                   /* Define a largura da linha */
+    height: 5px;                  /* Define a altura da linha */
+    background: linear-gradient(90deg, #940EFF, #2189E6, #06F7FF); /* Define um gradiente de cores para a linha */
+    background-size: 200%;        /* Estica o gradiente para uma transição suave */
+    animation: fluid-color-wave 3s infinite linear; /* Aplica a animação na linha */
+    transform: translateY(-50%);  /* Ajusta a linha para ficar centrada verticalmente */
+    border-radius: 5px;           /* Adiciona bordas arredondadas à linha */
+    box-shadow: 0 0 10px rgba(6, 247, 255, 0.5);  /* Brilho na linha */
+    }
+}
+
+/* Título e subtítulo na Seção 6 */
+.section-6 h1 {
+    font-size: 35px;        /* Define o tamanho da fonte do título */
+    font-weight: bold;      /* Torna o título em negrito */
+    margin: 0;              /* Remove as margens do título */
+    color: white;         /* Define a cor do título como branco */
+    display: inline-block;  /* Exibe o título como bloco inline */
+    text-align: left;       /* Alinha o título à esquerda */
+}
+
+.section-6 h1 span {
+    font-weight: lighter; /* Torna o texto em span mais leve */
+}
+
+.section-6 h2 {
+    font-size: 25px;       /* Define o tamanho da fonte do subtítulo */
+    font-weight: lighter;  /* Torna o subtítulo mais leve */
+    color: white;        /* Define a cor do subtítulo como branco */
+    margin-top: 10px;      /* Adiciona um espaçamento acima do subtítulo */
+    text-align: left;      /* Alinha o subtítulo à esquerda */
+}
+
+/* Novo conteúdo abaixo da linha */
+.section-6-content {
+    display: flex;                /* Exibe os itens como flex */
+    justify-content: flex-start;  /* Alinha os itens à esquerda */
+    align-items: flex-start;      /* Alinha os itens ao topo */
+    gap: 100px;                   /* Adiciona um espaçamento de 100px entre os itens */
+    margin-top: 20px;             /* Adiciona um espaçamento acima do conteúdo */
+    padding-left: 2px;            /* Adiciona um espaçamento à esquerda */
+}
+
+.section-6-content .text {
+    max-width: 300px;                     /* Limita a largura máxima do texto */
+    font-family: 'Quicksand', sans-serif; /* Define a fonte do texto */
+    font-weight: lighter;                 /* Define a fonte como mais leve */
+    color: white;                       /* Define a cor do texto como branco */
+    line-height: 1.6;                     /* Define a altura das linhas para facilitar a leitura */
+}
+
+.section-6-content .text {
+    max-width: 300px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: lighter;
+    color: white;
+    line-height: 1.6;
+    text-align: left;  /* Alinha o texto à esquerda */
+}
+
+.section-6-content .text strong {
+    font-weight: bold; /* Torna o texto dentro do strong em negrito */
+}
+
+.section-6-content iframe {
+    width: 600px;                                  /* Define a largura do iframe */
+    height: 350px;                                 /* Define a altura do iframe */
+    border: none;                                  /* Remove a borda do iframe */
+    margin-top: 30px;                              /* Adiciona um espaçamento acima do iframe */
+    box-shadow: 0 0 20px rgba(6, 247, 255, 0.2); /* Sombra suave */
+}
+
+/* Responsividade da Seção 6 */
+@media (max-width: 768px) {
+    .section-6 {
+        padding: 40px 20px;         /* Espaço uniforme ao redor da seção */
+        height: auto;               /* Altura se ajusta ao conteúdo */
+        margin: 30px 0 80px;        /* Margens: 30px topo, 0 laterais, 80px base */
+        position: relative;         /* Para posicionamento dos elementos filhos */
+        text-align: center;         /* Centraliza todo o texto da seção */
+        padding-left: 0;            /* Remove o padding-left que estava deslocando o conteúdo */
+    }
+
+    .section-6 h1 {
+        font-size: 32px;           /* Tamanho da fonte do título */
+        margin: 0 auto;            /* Centraliza horizontalmente */
+        width: 100%;               /* Ocupa toda a largura disponível */
+        text-align: center;        /* Centraliza o texto do título */
+        background: linear-gradient(45deg, #940EFF, #06F7FF); /* Gradiente roxo para azul */
+        -webkit-background-clip: text;  /* Aplica o gradiente apenas no texto */
+        -webkit-text-fill-color: transparent;                     /* Torna o texto transparente para mostrar o gradiente */
+        text-shadow: 0 0 15px rgba(6, 247, 255, 0.3);           /* Brilho suave ao redor do texto */
+    }
+
+    .section-6 h2 {
+        font-size: 22px;           /* Tamanho da fonte do subtítulo */
+        margin: 10px auto 30px;    /* Margens: 10px topo, auto laterais, 30px base */
+        width: 100%;               /* Ocupa toda a largura disponível */
+        text-align: center;        /* Centraliza o texto do subtítulo */
+        color: #FFF;             /* Cor branca para o subtítulo */
+        opacity: 0.9;              /* Levemente transparente */
+    }
+
+    .section-6 .line {
+        width: 100vw;              /* Largura total da viewport */
+        position: relative;        /* Posicionamento relativo para seguir o fluxo do documento */
+        left: 50%;                 /* Move 50% para a direita */
+        transform: translateX(-50%); /* Centraliza a linha horizontalmente */
+        margin-top: 30px;          /* Espaço entre o h2 e a linha */
+        margin-bottom: 30px;       /* Espaço entre a linha e o conteúdo seguinte */
+        height: 4px;               /* Espessura da linha */
+        box-shadow: 0 0 10px rgba(6, 247, 255, 0.5);  /* Brilho ao redor da linha */
+        background: linear-gradient(90deg, #940EFF, #2189E6, #06F7FF); /* Gradiente da linha */
+        background-size: 200%;                          /* Tamanho do gradiente para animação */
+        animation: fluid-color-wave 3s infinite linear; /* Animação do gradiente */
+    }
+
+    .section-6-content {
+        flex-direction: column-reverse; /* Inverte ordem: texto primeiro, depois vídeo */
+        align-items: center;            /* Centraliza */
+        gap: 30px;                      /* Espaço entre elementos */
+        padding: 40px 15px 20px;        /* Espaçamento interno */
+        max-width: 600px;               /* Largura máxima */
+        margin: 0 auto;                 /* Centraliza container */
+    }
+
+    .section-6-content iframe {
+        width: 100%;               /* Largura total */
+        height: 250px;             /* Altura proporcional */
+        border-radius: 10px;       /* Cantos arredondados */
+        box-shadow: 0 0 20px rgba(6, 247, 255, 0.2); /* Sombra suave */
+        margin: 0;                 /* Remove margens */
+    }
+
+    .section-6-content .text {
+        max-width: 90%;            /* Largura responsiva */
+        margin: 0 auto;            /* Centraliza */
+        text-align: center;        /* Alinha texto */
+        font-size: 17px;           /* Tamanho legível */
+        line-height: 1.7;          /* Espaçamento linhas */
+        letter-spacing: 0.3px;     /* Legibilidade */
+        padding: 0 15px;           /* Espaço lateral */
+    }
+
+    .section-6-content .text p {
+        margin-bottom: 20px;   /* Espaço parágrafos */
+        opacity: 0.95;         /* Suaviza texto */
+    }
+
+    .section-6-content .text strong {
+        color: #06F7FF;      /* Destaque */
+        font-weight: 600;      /* Peso fonte */
+    }
+}
+
+/* Ajustes para telas muito pequenas */
+@media (max-width: 480px) {
+    .section-6 {
+        padding: 30px 15px;    /* Ajusta espaço */
+    }
+
+    .section-6 h1 {
+        font-size: 28px;       /* Reduz título */
+    }
+
+    .section-6 h2 {
+        font-size: 20px;       /* Reduz subtítulo */
+    }
+
+    .section-6-content iframe {
+        height: 200px;         /* Ajusta vídeo */
+    }
+
+    .section-6-content .text {
+        font-size: 16px;       /* Reduz texto */
+        line-height: 1.6;      /* Ajusta espaçamento */
+        max-width: 95%;        /* Aumenta largura */
+        padding: 0 10px;       /* Reduz padding */
+    }
+}
+
+/* Seção 7  --------------------   S   E   Ç   Ã   0   -   7   --------------------- */
+.section-7 {
+    margin-top: 400px;      /* Adiciona espaçamento entre a seção 6 e 7 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    font-size: 22px;
+    padding: 30px 20px;     /* Ajuste do padding */
+    height: auto;           /* Altere de 80vh para auto para não limitar a altura */
+    z-index: 10;            /* Um valor alto para garantir que fique acima de outros elementos */
+    min-height: 500px;      /* Definindo uma altura mínima para garantir conteúdo visível */
+}
+
+/* Gradiente no texto */
+.section-7 .gradient-text {
+    background: linear-gradient(90deg, #940EFF, #06F7FF, #940EFF);
+    background-size: 200% auto;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: text-gradient-animation 4s infinite linear;
+}
+
+/* Animação do movimento do gradiente */
+@keyframes text-gradient-animation {
+    0% {
+        background-position: 0% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}
+
+/* Responsividade da Seção 7 */
+@media (max-width: 768px) {
+    .section-7 {
+        margin-top: 60px;          /* Reduz espaço superior */
+        padding: 40px 20px;        /* Espaço interno uniforme */
+        min-height: auto;          /* Altura automática */
+        position: relative;        /* Para posicionamento */
+        display: flex;             /* Mantém flex */
+        justify-content: center;   /* Centraliza conteúdo */
+        align-items: center;       /* Alinha verticalmente */
+    }
+
+    .section-7 .text-container {
+        max-width: 90%;           /* Largura responsiva */
+        margin: 0 auto;           /* Centraliza */
+        padding: 20px;            /* Espaço interno */
+        background: rgba(0, 0, 0, 0.1); /* Fundo sutil */
+        border-radius: 15px;      /* Cantos arredondados */
+        backdrop-filter: blur(5px); /* Efeito de vidro */
+    }
+
+    .section-7 p {
+        font-size: 20px;          /* Tamanho de fonte ajustado */
+        line-height: 1.7;         /* Espaçamento entre linhas */
+        letter-spacing: 0.3px;    /* Legibilidade */
+        margin-bottom: 20px;      /* Espaço inferior */
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Brilho sutil */
+    }
+
+    .section-7 .gradient-text {
+        font-size: 24px;          /* Tamanho maior para destaque */
+        background: linear-gradient(45deg, #940EFF, #06F7FF, #940EFF);
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: text-gradient-animation 4s infinite linear;
+        text-shadow: 0 0 15px rgba(6, 247, 255, 0.3); /* Brilho suave */
+        padding: 0 5px;           /* Pequeno espaço lateral */
+        display: inline-block;    /* Melhor controle do texto */
+        transform: scale(1.05);   /* Leve destaque */
+    }
+}
+
+/* Ajustes para telas muito pequenas */
+@media (max-width: 480px) {
+    .section-7 {
+        padding: 30px 15px;       /* Reduz padding */
+        margin-top: 30px;         /* Reduz margem superior */
+    }
+
+    .section-7 .text-container {
+        max-width: 95%;           /* Aumenta largura disponível */
+        padding: 15px;            /* Reduz padding */
+    }
+
+    .section-7 p {
+        font-size: 18px;          /* Reduz texto */
+        line-height: 1.6;         /* Ajusta espaçamento */
+    }
+
+    .section-7 .gradient-text {
+        font-size: 22px;          /* Reduz texto com gradiente */
+        transform: scale(1.02);   /* Reduz o destaque */
+    }
+}
+
+/* Seção 8 - Cards Flutuantes ----------   S   E   Ç   Ã   0   -   8   --------------------- */
+.section-8 {
+    padding: 100px 40px;          /* Reduzido o padding vertical */
+    min-height: 130vh;            /* Reduzida a altura mínima */
+    display: flex;                /* Layout flexível */
+    align-items: center;          /* Centralização vertical */
+    justify-content: center;      /* Centralização horizontal */
+    background: transparent;      /* Fundo transparente */
+    position: relative;           /* Para posicionamento dos elementos */
+    overflow: visible;            /* Permite que os elementos ultrapassem os limites */
+    margin-top: 0px;             /* Reduz margem superior */
+}
+
+/* Container dos cards */
+.floating-cards-container {
+    display: flex;                /* Layout flexível */
+    justify-content: center;      /* Centralização horizontal */
+    align-items: stretch;         /* Estica os cards para mesma altura */
+    gap: 30px;                    /* Reduzido o espaço entre cards */
+    flex-wrap: nowrap;            /* Força os cards a ficarem na mesma linha */
+    width: 90%;                   /* Ocupa toda a largura disponível */
+    max-width: 1600px;            /* Reduzida a largura máxima */
+    margin: 0 auto;               /* Centralização automática */
+    padding: 60px 20px;           /* Espaço interno */
+    margin-top: -500px;           /* Usa margem negativa para puxar a seção mais para cima */
+}
+
+/* Card individual */
+.floating-card {
+    flex: 1;                      /* Distribuição igual do espaço */
+    width: calc(33.333% - 30px);  /* Ajustado para o novo gap */
+    min-width: 320px;             /* Reduzida a largura mínima */
+    max-width: 400px;             /* Reduzida a largura máxima */
+    display: flex;                /* Layout flexível */
+    perspective: 1000px;          /* Efeito 3D */
+}
+
+/* Conteúdo do card */
+.card-content {
+    position: relative;           /* Para posicionamento dos elementos internos */
+    width: 100%;                  /* Ocupa toda a largura do card */
+    min-height: 500px;            /* Reduzida a altura mínima */
+    display: flex;                /* Layout flexível */
+    flex-direction: column;       /* Organização em coluna */
+    padding: 30px 25px;           /* Reduzido o padding */
+    background: rgba(7, 0, 9, 0.221); /* Fundo semi-transparente */
+    backdrop-filter: blur(10px);  /* Efeito de vidro */
+    border-radius: 20px;          /* Bordas arredondadas */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    border: 1px solid rgba(255, 255, 255, 0.062); /* Borda sutil */
+    transform-style: preserve-3d; /* Mantém o efeito 3D */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Cabeçalho do card */
+.card-header {
+    margin-bottom: 30px;        /* Espaço após o cabeçalho */
+}
+
+/* Título principal do card */
+.card-header h1 {
+    font-size: 32px;            /* Tamanho do título */
+    background: linear-gradient(45deg, #940EFF, #06F7FF); /* Gradiente */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 15px;        /* Espaço após o título */
+    transform: translateZ(30px); /* Efeito 3D */
+    text-align: center;         /* Centralização */
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Subtítulo do card */
+.card-header h2 {
+    font-size: 22px;              /* Tamanho do subtítulo */
+    color: white;               /* Cor do texto */
+    opacity: 0.9;                 /* Transparência sutil */
+    margin-bottom: 20px;          /* Espaço após o subtítulo */
+    transform: translateZ(20px);  /* Efeito 3D */
+    text-align: center;           /* Centralização */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.card-body h3 {
+    font-weight: 15; /* Define a fonte como light */
+}
+
+/* Corpo do card */
+.card-body {
+    flex: 1;                        /* Ocupa espaço disponível */
+    display: flex;                  /* Layout flexível */
+    flex-direction: column;         /* Organização em coluna */
+    justify-content: space-between; /* Distribui o espaço */
+}
+
+/* Texto expandível */
+.expandable-content {
+    max-height: 0;                /* Inicialmente fechado */
+    overflow: hidden;             /* Esconde o conteúdo extra */
+    opacity: 0;                   /* Invisível inicialmente */
+    transform: translateY(-20px); /* Posição inicial */
+    transition: all 0.5s ease;    /* Transição suave */
+}
+
+/* Estado expandido */
+.floating-card.expanded .expandable-content {
+    max-height: 2000px;         /* Altura máxima quando expandido */
+    opacity: 1;                 /* Totalmente visível */
+    transform: translateY(0);   /* Posição final */
+}
+
+/* Botão de expandir */
+.expand-btn {
+    background: linear-gradient(45deg, #00bbff22, #00bbff23); /* Gradiente */
+    border: none;               /* Remove borda */
+    padding: 12px 30px;         /* Espaço interno */
+    border-radius: 25px;        /* Bordas arredondadas */
+    color: white;             /* Cor do texto */
+    font-size: 16px;            /* Tamanho do texto */
+    cursor: pointer;            /* Cursor de clique */
+    transition: all 0.3s ease;  /* Transição suave */
+    margin-top: auto;           /* Empurra para o final */
+    align-self: center;         /* Centralização */
+    z-index: 2;                 /* Acima dos outros elementos */
+}
+
+/* Hover do botão */
+.expand-btn:hover {
+    transform: scale(1.05);     /* Aumenta levemente */
+    box-shadow: 0 0 20px rgba(6, 247, 255, 0.4); /* Brilho */
+}
+
+/* Responsividade */
+@media (max-width: 1400px) {
+    .floating-cards-container {
+        padding: 40px 20px;     /* Reduz padding */
+        gap: 30px;              /* Reduz espaço entre cards */
+    }
+}
+
+@media (max-width: 1200px) {
+    .floating-cards-container {
+        flex-wrap: wrap;         /* Permite quebra de linha */
+        justify-content: center; /* Centraliza os cards */
+    }
+
+    .floating-card {
+        width: calc(50% - 30px); /* Dois cards por linha */
+    }
+}
+
+@media (max-width: 768px) {
+    .section-8 {
+        padding: 60px 20px;     /* Reduz padding */
+        min-height: auto;       /* Altura automática */
+    }
+
+    .floating-card {
+        width: 100%;           /* Um card por linha */
+        max-width: 600px;      /* Aumenta largura máxima para melhor leitura */
+        margin: 0 auto;        /* Centraliza o card */
+    }
+
+    .card-content {
+        min-height: 350px;     /* Ajusta altura mínima */
+    }
+}
+
+@media (max-width: 600px) {
+    .section-8 {
+        padding: 40px 15px;    /* Reduz ainda mais o padding */
+    }
+
+    .floating-cards-container {
+        padding: 20px 10px;    /* Reduz padding do container */
+    }
+
+    .floating-card {
+        max-width: 100%;       /* Ocupa toda a largura disponível */
+    }
+
+    .card-content {
+        padding: 20px 15px;    /* Reduz padding do conteúdo */
+    }
+
+    .card-header h1 {
+        font-size: 24px;       /* Reduz mais o título */
+    }
+
+    .card-header h2 {
+        font-size: 20px;       /* Reduz mais o subtítulo */
+    }
+
+    .card-body h3 {
+        font-size: 16px;       /* Reduz texto */
+        line-height: 1.4;      /* Ajusta altura da linha */
+    }
+
+    .expandable-content p {
+        font-size: 15px;       /* Reduz tamanho do texto */
+        line-height: 1.5;      /* Ajusta altura da linha */
+    }
+
+    .expand-btn {
+        padding: 10px 25px;    /* Reduz tamanho do botão */
+        font-size: 14px;       /* Reduz tamanho do texto do botão */
+    }
+}
+
+@media (max-width: 400px) {
+    .section-8 {
+        padding: 30px 10px;    /* Mínimo padding para telas muito pequenas */
+    }
+
+    .card-content {
+        padding: 15px 12px;    /* Mínimo padding para o conteúdo */
+        min-height: 300px;     /* Altura mínima reduzida */
+    }
+
+    .card-header {
+        margin-bottom: 20px;   /* Reduz espaço após cabeçalho */
+    }
+
+    .card-header h1 {
+        font-size: 22px;       /* Mínimo tamanho do título */
+        margin-bottom: 10px;   /* Reduz espaço */
+    }
+
+    .card-header h2 {
+        font-size: 18px;       /* Mínimo tamanho do subtítulo */
+        margin-bottom: 15px;   /* Reduz espaço */
+    }
+}
+
+/* Efeito hover no card - Quando o mouse passa sobre o card, ele se eleva e ganha uma sombra destacada */
+.card-content:hover {
+    transform: translateY(-10px);                     /* Move o card 10px para cima */
+    box-shadow: 0 20px 40px rgba(6, 247, 255, 0.3); /* Adiciona uma sombra suave e brilhante */
+}
+
+/* Efeitos nos textos - Transições suaves para transformações e mudanças visuais nos títulos */
+.card-header h1 {
+    transition: transform 0.3s ease, text-shadow 0.3s ease; /* Transição suave para movimentação e sombra do texto */
+}
+
+.card-header h2 {
+    transition: transform 0.3s ease, opacity 0.3s ease;     /* Transição suave para movimentação e transparência */
+}
+
+/* Efeitos hover nos textos - Realça os textos ao passar o mouse */
+.card-content:hover .card-header h1 {
+    transform: translateZ(40px) scale(1.05);        /* Aproxima o texto e aumenta ligeiramente o tamanho */
+    text-shadow: 0 0 20px rgba(6, 247, 255, 0.5); /* Adiciona um brilho ao redor do texto */
+}
+
+.card-content:hover .card-header h2 {
+    transform: translateZ(30px); /* Aproxima o texto */
+    opacity: 1;                  /* Torna o texto totalmente visível */
+}
+
+.card-content:hover .expandable-content p {
+    transform: translateZ(20px);        /* Aproxima o texto */
+    color: rgba(255, 255, 255, 0.95); /* Muda a cor do texto para quase branco */
+}
+
+/* Efeito de brilho flutuante - Adiciona um brilho pulsante ao texto em destaque */
+@keyframes glowing {
+    0% { text-shadow: 0 0 5px rgba(6, 247, 255, 0.5); }   /* Brilho inicial */
+    50% { text-shadow: 0 0 20px rgba(6, 247, 255, 0.8); } /* Brilho máximo */
+    100% { text-shadow: 0 0 5px rgba(6, 247, 255, 0.5); } /* Retorna ao brilho inicial */
+}
+
+.card-content:hover .card-body strong {
+    color: #06F7FF;               /* Altera a cor para azul */
+    animation: glowing 2s infinite; /* Aplica o brilho pulsante de forma contínua */
+}
+
+/* Efeito de destaque gradual - Cria uma animação visual na parte inferior do texto */
+.expandable-content p {
+    position: relative; /* Permite o uso de elementos pseudo no contexto do texto */
+    overflow: hidden;   /* Esconde os elementos que ultrapassam os limites */
+}
+
+.expandable-content p::after {
+    content: '';        /* Adiciona um elemento decorativo vazio */
+    position: absolute; /* Posiciona o elemento em relação ao parágrafo */
+    left: 0;
+    top: 0;
+    height: 100%; /* Ocupa toda a altura do parágrafo */
+    width: 0;     /* Inicialmente, o elemento é invisível */
+    background: linear-gradient(90deg, rgba(6, 247, 255, 0.1), rgba(148, 14, 255, 0.1)); /* Cria um gradiente leve */
+    transition: width 0.3s ease; /* Suaviza a expansão do elemento */
+}
+
+.card-content:hover .expandable-content p::after {
+    width: 100%; /* Expande o gradiente ao passar o mouse */
+}
+
+/* Responsividade da Seção 8 */
+@media (max-width: 1600px) {
+    .section-8 {
+        margin-top: 150px;  /* Aumenta a distância para a seção superior */
+        padding: 80px 30px; /* Reduz o padding interno */
+    }
+}
+
+@media (max-width: 1400px) {
+    .section-8 {
+        margin-top: 180px;  /* Aumenta a distância para a seção superior */
+        min-height: auto;   /* Ajusta a altura mínima para evitar espaços desnecessários */
+        padding: 60px 30px; /* Reduz o padding interno */
+    }
+}
+
+@media (max-width: 1200px) {
+    .section-8 {
+        margin-top: 200px;   /* Aumenta a distância para a seção superior */
+        padding: 50px 20px;  /* Reduz o padding interno */
+    }
+}
+
+@media (max-width: 900px) {
+    .section-8 {
+        margin-top: 250px;   /* Aumenta a distância para a seção superior */
+        padding: 40px 20px;  /* Reduz o padding interno */
+    }
+}
+
+@media (max-width: 600px) {
+    .section-8 {
+        margin-top: 580px;   /* Aumenta a distância para a seção superior */
+        padding: 80px 45px;  /* Reduz o padding interno */
+    }
+}
+
+@media (max-width: 500px) {
+    .section-8 {
+        margin-top: 400px;   /* Aumenta a distância para a seção superior */
+        padding: 20px 10px;  /* Reduz o padding interno */
+    }
+}
+
+/* Footer - RODAPÉ  --------------------   R   O   D  A  -  P   É   --------------------- */
+.footer {
+    background: rgba(255, 255, 255, 0.03);    /* Fundo semi-transparente */
+    backdrop-filter: blur(10px);               /* Efeito de vidro */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Borda sutil */
+    padding: 60px 0 20px;                      /* Espaçamento interno */
+    margin-top: 10px;                         /* Espaço acima do footer */
+    position: relative;                        /* Para posicionamento dos elementos */
+    overflow: hidden;                          /* Esconde overflow de efeitos */
+}
+
+/* Container principal do footer */
+.footer-container {
+    max-width: 1200px;                        /* Largura máxima */
+    margin: 0 auto;                           /* Centralização */
+    display: flex;                            /* Layout flexível */
+    justify-content: space-between;           /* Distribuição do espaço */
+    padding: 0 40px;                          /* Padding lateral */
+    gap: 40px;                                /* Espaço entre seções */
+}
+
+/* Seções do footer */
+.footer-section {
+    flex: 1;                                  /* Distribuição igual */
+    min-width: 250px;                         /* Largura mínima */
+}
+
+/* Logo do footer */
+.footer-logo {
+    height: 120px;                  /* Altura da logo */
+    margin-bottom: 20px;            /* Espaço abaixo */
+    filter: brightness(1.2);        /* Brilho suave */
+    margin-left: -13px;             /* Move 20px para a esquerda */
+}
+
+/* Links de redes sociais */
+.social-links {
+    display: flex;                   /* Layout flexível */
+    gap: 15px;                       /* Espaço entre ícones */
+    margin-top: 20px;                /* Espaço acima */
+}
+
+.social-links a {
+    color: white;                             /* Cor dos ícones */
+    font-size: 20px;                          /* Tamanho dos ícones */
+    transition: all 0.3s ease;                /* Transição suave */
+}
+
+.social-links a:hover {
+    color: #06F7FF;                           /* Cor ao passar o mouse */
+    transform: translateY(-3px);              /* Elevação suave */
+    text-shadow: 0 0 15px #06F7FF;           /* Brilho ao redor */
+}
+
+/* Títulos das seções */
+.footer-section h3 {
+    color: white;                             /* Cor do título */
+    font-size: 18px;                          /* Tamanho da fonte */
+    margin-bottom: 20px;                      /* Espaço abaixo */
+    font-weight: 500;                         /* Peso da fonte */
+    background: linear-gradient(45deg, #940EFF, #06F7FF); /* Gradiente */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Listas no footer */
+.footer-section ul {
+    list-style: none;                         /* Remove marcadores */
+    padding: 0;                               /* Remove padding */
+}
+
+.footer-section ul li {
+    margin-bottom: 12px;                      /* Espaço entre itens */
+}
+
+.footer-section ul li a, 
+.footer-section ul li {
+    color: rgba(255, 255, 255, 0.8);          /* Cor do texto */
+    text-decoration: none;                     /* Remove sublinhado */
+    transition: all 0.3s ease;                 /* Transição suave */
+    display: flex;                             /* Layout flexível */
+    align-items: center;                       /* Alinhamento vertical */
+    gap: 8px;                                  /* Espaço entre ícone e texto */
+}
+
+.footer-section ul li a:hover {
+    color: #06F7FF;                            /* Cor ao passar o mouse */
+    transform: translateX(5px);                /* Movimento suave */
+}
+
+/* Linha animada */
+.footer-line {
+    width: 100%;                               /* Largura total */
+    height: 1px;                               /* Altura da linha */
+    background: linear-gradient(90deg, #940EFF, #06F7FF, #940EFF); /* Gradiente */
+    margin: 40px 0 20px;                       /* Espaçamento */
+    background-size: 200% 100%;                /* Tamanho do gradiente */
+    animation: gradient-move 3s linear infinite; /* Animação */
+}
+
+/* Copyright */
+.footer-bottom {
+    text-align: center;                        /* Centralização */
+    color: rgba(255, 255, 255, 0.6);          /* Cor do texto */
+    padding: 20px 0;                           /* Espaçamento */
+    font-size: 14px;                           /* Tamanho da fonte */
+}
+
+/* Animação do gradiente */
+@keyframes gradient-move {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 200% 0%; }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;                /* Empilha as seções */
+        padding: 0 20px;                       /* Reduz padding */
+        gap: 40px;                             /* Espaço entre seções */
+    }
+
+    .footer-section {
+        text-align: center;                    /* Centraliza conteúdo */
+        min-width: auto;                       /* Remove largura mínima */
+    }
+
+    .social-links {
+        justify-content: center;               /* Centraliza ícones */
+    }
+
+    .footer-section ul li a, 
+    .footer-section ul li {
+        justify-content: center;               /* Centraliza itens */
+    }
+}
+
